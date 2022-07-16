@@ -96,13 +96,13 @@ class NetatmoCamera(NetatmoBase, Camera):
         self._home_id = self._camera.home.entity_id
         self._device_name = self._camera.name
         self._attr_name = f"{self._device_name}"
+        self._attr_brand = MANUFACTURER
         self._model = self._camera.device_type
         self._config_url = CONF_URL_SECURITY
         self._attr_unique_id = f"{self._id}-{self._model}"
         self._quality = DEFAULT_QUALITY
         self._monitoring: bool | None = None
         self._light_state = None
-        self._attr_brand = MANUFACTURER
 
         self._publishers.extend(
             [
